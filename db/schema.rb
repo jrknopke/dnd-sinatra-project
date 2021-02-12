@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210211223659) do
+ActiveRecord::Schema.define(version: 20210212203905) do
 
-  create_table "characters", force: :cascade do |t|
+  create_table "spells", force: :cascade do |t|
     t.string  "name"
     t.string  "class"
     t.integer "level"
     t.integer "user_id"
+    t.string  "desc"
+    t.string  "damage"
+    t.string  "range"
+    t.string  "duration"
+    t.string  "casting_time"
+    t.boolean "ritual"
+    t.boolean "concentration"
+    t.string  "material"
+    t.string  "school"
   end
 
   create_table "users", force: :cascade do |t|

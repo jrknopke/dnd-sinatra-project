@@ -1,0 +1,5 @@
+<h1> Characters </h1>
+
+<% @spells.each do |spell|%>
+    <h2><a href="/spells/<%= spell.id%>"></a><%= spell.name %> </h2>
+<% end %>
