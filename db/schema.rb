@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210212203905) do
+ActiveRecord::Schema.define(version: 20210213012654) do
 
   create_table "spells", force: :cascade do |t|
     t.string  "name"
@@ -23,8 +23,6 @@ ActiveRecord::Schema.define(version: 20210212203905) do
     t.string  "range"
     t.string  "duration"
     t.string  "casting_time"
-    t.boolean "ritual"
-    t.boolean "concentration"
     t.string  "material"
     t.string  "school"
   end

@@ -4,6 +4,9 @@ class SpellsController < ApplicationController
 
         # New
         # make a get request to '/characters/new'
+        get '/spells/new' do
+            erb :'/spells/new'
+        end
 
         # Create
         # make a post request to '/characters'
@@ -17,10 +20,10 @@ class SpellsController < ApplicationController
         end
 
         # Show - make a get request to '/characters/:id'
-        get '/spells/:id' do
-            @spell = Spell.find
-            erb :'spells/show'
-        end
+        # get '/spells/:id' do
+        #     @spell = Spell.find
+        #     erb :'spells/show'
+        # end
     # UPDATE
 
         # Edit
