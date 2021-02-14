@@ -10,11 +10,8 @@ class SpellsController < ApplicationController
         # Create
         post '/spells' do
             spell = Spell.new(params)
-            if spell.save
-                redirect '/spells'
-            else
-                erb :'/spells/new'
-            end
+            spell.save
+            redirect '/spells'
         end
 
     # READ
@@ -24,7 +21,7 @@ class SpellsController < ApplicationController
             erb :'spells/index'
         end
 
-        # Show - make a get request to '/characters/:id'
+        # Show 
         get '/spells/:id' do
             @spell = Spell.find(params[:id])
             erb :'spells/show'
@@ -41,7 +38,7 @@ class SpellsController < ApplicationController
         patch '/spells/:id' do
             @spell = Spell.find(params[:id])
 
-            if !spell.name.empty? && !spell.level.empty?
+            if !spell.spell_name.empty? && !spell.level.empty?
                 @spell.update(params["spell"])
                 redirect '/spells/#{params[:id]}'
             else
@@ -52,6 +49,10 @@ class SpellsController < ApplicationController
 
     # DESTROY
 
-        # make a delete request to '/characters/:id'
+        delete '/spells/:id' do
+            spell = Spell.find(params[:id])
+            spell.destroy
+            redirect '/spells'
+        end
 
 end

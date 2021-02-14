@@ -1,15 +1,15 @@
-<h1>Edit Spell <%=@spell.name%></h1>
+<h1>Edit Spell <%=@spell.spell_name%></h1>
 <p><%= @error %></p>
 <form action="/spells/<%=@spell.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
     <label>Spell Name:</label>
     <input type ="text" name="spell[spell_name]" value="<%= @spell.spell_name %>">
     <p><label>Classes:</label>
-    <input type ="text" name="spell[class]" value="<%= @spell.class%>"></p>
+    <input type ="text" name="spell[character_class]" value="<%= @spell.character_class%>"></p>
     <p><label>Level:</label>
     <input type ="integer" name="spell[level]" value="<%= @spell.level %>"></p>
     <p><label>Description:</label>
-    <textarea name="spell[description]" value="<%= @spell.description %>"></textarea></p>
+    <textarea name="spell[desc]" value="<%= @spell.desc%>"></textarea></p>
     <p><label>Damage:</label>
     <input type ="text" name="spell[damage]" value="<%= @spell.damage %>"></p>
     <p><label>Range:</label>

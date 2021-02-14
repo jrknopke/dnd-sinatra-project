@@ -1,1 +1,7 @@
-<h1>Spell</h1>
+<h1><%= @spell.spell_name %></h1>
+<h3>Level: <%= @spell.level%> Class: <%=@spell.character_class%> <h3>
+
+<form action="/spells/<%=@spell.id%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit"> Delete Spell </button>
+</form>
