@@ -4,12 +4,16 @@ class SpellsController < ApplicationController
 
         # New
         get '/spells/new' do
-            erb :'/spells/new'
+            if logged_in?
+                erb :'/spells/new'
+            else
+                redirect '/login'
+            end
         end
 
         # Create
         post '/spells' do
-            spell = Spell.new(params)
+            spell = current_user.spells.build(params)
             spell.save
             redirect '/spells'
         end
@@ -17,21 +21,33 @@ class SpellsController < ApplicationController
     # READ
 
         get '/spells' do
-            @spells = Spell.all.reverse
-            erb :'spells/index'
+            if logged_in?
+                @spells = Spell.all.reverse
+                erb :'spells/index'
+            else
+                redirect '/login'
+            end
         end
 
         # Show 
         get '/spells/:id' do
-            @spell = Spell.find(params[:id])
-            erb :'spells/show'
+            if logged_in?
+                @spell = Spell.find(params[:id])
+                erb :'spells/show'
+            else
+                redirect '/login'
+            end
         end
     # UPDATE
 
         # Edit
         get '/spells/:id/edit' do
-            @spell = Spell.find(params[:id])
-            erb :'/spells/edit'
+            if logged_in?
+                @spell = Spell.find(params[:id])
+                erb :'/spells/edit'
+            else
+                redirect '/login'
+            end
         end
 
         #Update

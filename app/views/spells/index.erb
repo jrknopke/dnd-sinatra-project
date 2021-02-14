@@ -4,6 +4,8 @@
     <h2><a href="/spells/<%= spell.id%>"></a><%= spell.spell_name %> </h2>
     <p>Class: <%= spell.character_class%></p>
     <p>Level: <%= spell.level %></p>
-    <% #If current logged in user created the spell, allow them to click link below and edit%>
-    <a href="/spells/<%=spell.id%>/edit">Edit Spell</a>
+    
+    <% if current_user == spell.user %>
+        <a href="/spells/<%=spell.id%>/edit">Edit Spell</a>
+    <% end %>
 <% end %>
