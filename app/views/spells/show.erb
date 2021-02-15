@@ -1,5 +1,12 @@
 <h1><%= @spell.spell_name %></h1>
-<h3>Level: <%= @spell.level%> Class: <%=@spell.character_class%> <h3>
+<h3>Level: <%= @spell.level%> </h3>
+<h3>Class: <%=@spell.character_class%> </h3>
+<p> Description: <%= @spell.desc %> </p>
+<p> Damage: <%= @spell.damage %> </p>
+<p> Range: <%= @spell.range %> </p>
+<p> Duration: <%= @spell.duration %> </p>
+<p> Casting Time: <%= @spell.casting_time %> </p>
+<p> School: <%= @spell.school %> </p>
 
 <form action="/spells/<%=@spell.id%>" method="post">
     <input type="hidden" name="_method" value="delete">

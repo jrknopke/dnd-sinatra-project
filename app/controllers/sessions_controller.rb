@@ -10,7 +10,8 @@ class SessionsController < ApplicationController
             @error = "One of the fields was left blank, please enter a username and password"
             erb :'users/login'
         else
-            if user = User.find_by(username: params["username"], password: params["password"])
+            if user = User.find_by(username: params["username"])
+                user.authenticate(params["password"])
                 session[:user_id] = user.id
                 redirect '/spells'
             else

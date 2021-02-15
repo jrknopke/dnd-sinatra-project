@@ -1,7 +1,7 @@
 <h1> Spells </h1>
 <a href='/spells/new'>Create a New Spell</a>
 <% @spells.each do |spell|%>
-    <h2><a href="/spells/<%= spell.id%>"></a><%= spell.spell_name %> </h2>
+    <h2><a href="/spells/<%= spell.id%>"><%= spell.spell_name %></a></h2>
     <p>Class: <%= spell.character_class%></p>
     <p>Level: <%= spell.level %></p>
     
