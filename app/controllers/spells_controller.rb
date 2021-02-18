@@ -47,12 +47,12 @@ class SpellsController < ApplicationController
         patch '/spells/:id' do
             @spell = Spell.find(params[:id])
 
-            if !spell.spell_name.empty? && !spell.level.empty?
+            if !spell.spell_name.empty?
                 @spell.update(params["spell"])
                 redirect '/spells/#{params[:id]}'
             else
                 @error = "Invalid entries. Please try again"
-                erb:'/recipes/edit'
+                erb:'/spells/edit'
             end
         end
 
