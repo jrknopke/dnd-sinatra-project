@@ -1,8 +1,4 @@
+Clone and run ``bundle install``.
+Run server with ``shotgun``.
 
-<!-- 
-TO DO
-- create spells migration
-- create models 
-- plan routes for controller
-- build out controller actions and views (back and forth)
--->
+Users can signup, login, create their own custom spells and see custom spells created by all other users.
