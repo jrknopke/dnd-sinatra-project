@@ -10,7 +10,7 @@
 
 <form action="/spells/<%=@spell.id%>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <% if @spell.user == current_user %>
+     <% if @spell.user == current_user %>
         <button type="submit"> Delete Spell </button>
     <% end %>
 </form>

@@ -1,8 +1,9 @@
 <h1>Create a Spell</h1>
+<p style="color:red"><%= @error %></p>
 <form action="/spells" method="post">
-    <label>Spell Name:</label>
+    <label for="spell_name">Spell Name:</label>
     <input type ="text" name="spell_name">
-    <p><label>Class:</label>
+    <p><label for="character_class">Class:</label>
     <select name="character_class">
         <option value="Bard">Bard</option>
         <option value="Cleric">Cleric</option>
@@ -10,19 +11,19 @@
         <option value="Sorcerer">Sorcerer</option>
         <option value="Warlock">Warlock</option>
         <option value="Wizard">Wizard</option></select></p>
-    <p><label>Level:</label>
+    <p><label for="level">Level:</label>
     <input type ="integer" name="level"></p>
-    <p><label>Description:</label>
+    <p><label for="desc">Description:</label>
     <textarea name="desc"></textarea></p>
-    <p><label>Damage:</label>
+    <p><label for="damage">Damage:</label>
     <input type ="text" name="damage"></p>
-    <p><label>Range:</label>
+    <p><label for="range">Range:</label>
     <input type ="text" name="range"></p>
-    <p><label>Duration:</label>
+    <p><label for="duration">Duration:</label>
     <input type ="text" name="duration"></p>
-    <p><label>Casting Time:</label>
+    <p><label for="casting_time">Casting Time:</label>
     <input type ="text" name="casting_time"></p>
-    <p><label>School:</label>
+    <p><label for="school">School:</label>
     <select name="school">
         <option value="Abjuration">Abjuration</option>
         <option value="Conjuration">Conjuration</option>

@@ -14,8 +14,13 @@ class SpellsController < ApplicationController
         # Create
         post '/spells' do
             spell = current_user.spells.build(params)
-            spell.save
-            redirect '/spells'
+            if spell.valid?
+                spell.save
+                redirect '/spells/#{spell.id}'
+            else
+                @error = "Spells must have a Name, Class, Level, and School."
+                erb :'/spells/new'
+            end
         end
 
     # READ
@@ -46,14 +51,8 @@ class SpellsController < ApplicationController
         #Update
         patch '/spells/:id' do
             @spell = Spell.find(params[:id])
-
-            if !spell.spell_name.empty?
-                @spell.update(params["spell"])
-                redirect '/spells/#{params[:id]}'
-            else
-                @error = "Invalid entries. Please try again"
-                erb:'/spells/edit'
-            end
+            @spell.update(params["spell"])
+            redirect '/spells/#{params[:id]}'
         end
 
     # DESTROY
