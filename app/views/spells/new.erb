@@ -16,7 +16,24 @@
     <p><label for="desc">Description:</label>
     <textarea name="desc"></textarea></p>
     <p><label for="damage">Damage:</label>
-    <input type ="text" name="damage"></p>
+    <input type ="text" name="damage">
+    <select name="damage_dice">
+        <option value="none">---</option>
+        <option value="d6">d6</option>
+        <option value="d8">d8</option>
+        <option value="d10">d10</option></select>
+    <select name="damage_type">
+        <option value="none">---</option>
+        <option value="acid">Acid</option>
+        <option value="bludgeoning">Bludgeoning</option>
+        <option value="cold">Cold</option>
+        <option value="fire">Fire</option>
+        <option value="lightning">Lightning</option>
+        <option value="piercing">Piercing</option>
+        <option value="poison">Poison</option>
+        <option value="psychic">Psychic</option>
+        <option value="radiant">Radiant</option>
+        <option value="slashing">Slashing</option></select></p>
     <p><label for="range">Range:</label>
     <input type ="text" name="range"></p>
     <p><label for="duration">Duration:</label>

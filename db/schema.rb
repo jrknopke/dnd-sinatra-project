@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210214223729) do
+ActiveRecord::Schema.define(version: 20210304160732) do
 
   create_table "spells", force: :cascade do |t|
     t.string  "spell_name"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20210214223729) do
     t.string  "casting_time"
     t.string  "material"
     t.string  "school"
+    t.string  "damage_dice"
+    t.string  "damage_type"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,17 +1,40 @@
-<h1>Edit Spell <%=@spell.spell_name%></h1>
-<p><%= @error %></p>
+<h1>Edit Spell: <%=@spell.spell_name%></h1>
+<p style="color:red"><%= @error %></p>
 <form action="/spells/<%=@spell.id%>" method="post">
     <input type="hidden" name="_method" value="patch">
     <label for="spell_name">Spell Name:</label>
     <input type ="text" name="spell[spell_name]" value="<%= @spell.spell_name %>">
-    <p><label for="character_class">Classes:</label>
-    <input type ="text" name="spell[character_class]" value="<%= @spell.character_class%>"></p>
+    <p><label for="character_class">Class:</label>
+    <select name="spell[character_class]" value="<%= @spell.character_class%>">
+        <option value="Bard">Bard</option>
+        <option value="Cleric">Cleric</option>
+        <option value="Druid">Druid</option>
+        <option value="Sorcerer">Sorcerer</option>
+        <option value="Warlock">Warlock</option>
+        <option value="Wizard">Wizard</option></select></p>
     <p><label for="level">Level:</label>
     <input type ="integer" name="spell[level]" value="<%= @spell.level %>"></p>
     <p><label for="desc">Description:</label>
     <textarea name="spell[desc]" value="<%= @spell.desc%>"></textarea></p>
     <p><label for="damage">Damage:</label>
-    <input type ="text" name="spell[damage]" value="<%= @spell.damage %>"></p>
+    <input type ="text" name="spell[damage]" value="<%= @spell.damage %>">
+    <select name="spell[damage_dice]" value="<%= @spell.damage_dice %>">
+        <option value="none">---</option>
+        <option value="d6">d6</option>
+        <option value="d8">d8</option>
+        <option value="d10">d10</option></select>
+    <select name="spell[damage_type]" value="<%=@spell.damage_type %>">
+        <option value="none">---</option>
+        <option value="acid">Acid</option>
+        <option value="bludgeoning">Bludgeoning</option>
+        <option value="cold">Cold</option>
+        <option value="fire">Fire</option>
+        <option value="lightning">Lightning</option>
+        <option value="piercing">Piercing</option>
+        <option value="poison">Poison</option>
+        <option value="psychic">Psychic</option>
+        <option value="radiant">Radiant</option>
+        <option value="slashing">Slashing</option></select></p>
     <p><label for="range">Range:</label>
     <input type ="text" name="spell[range]" value="<%= @spell.range %>"></p>
     <p><label for="duration">Duration:</label>
@@ -19,7 +42,15 @@
     <p><label for="casting_time">Casting Time:</label>
     <input type ="text" name="spell[casting_time]" value="<%= @spell.casting_time %>"></p>
     <p><label for="school">School:</label>
-    <input type ="text" name="spell[school]" value="<%= @spell.school %>"></p>
+    <select name="spell[school]" value="<%= @spell.school %>">
+        <option value="Abjuration">Abjuration</option>
+        <option value="Conjuration">Conjuration</option>
+        <option value="Divination">Divination</option>
+        <option value="Enchantment">Enchantment</option>
+        <option value="Evocation">Evocation</option>
+        <option value="Illusion">Illusion</option>
+        <option value="Necromancy">Necromancy</option>
+        <option value="Transmutation">Transmutation</option></p>
     <p><button type="submit">Edit Spell</button></p>
 </form>
 
