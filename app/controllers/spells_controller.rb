@@ -16,7 +16,7 @@ class SpellsController < ApplicationController
             spell = current_user.spells.build(params)
             if spell.valid?
                 spell.save
-                redirect '/spells/#{spell.id}'
+                redirect '/spells'
             else
                 @error = "Spells must have a Name, Class, Level, and School."
                 erb :'/spells/new'

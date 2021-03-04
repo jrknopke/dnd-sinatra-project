@@ -16,6 +16,4 @@ class UsersController < ApplicationController
         end
     end
 
-#delete the account
-
 end
