@@ -45,7 +45,11 @@ class SpellsController < ApplicationController
         # Edit
         get '/spells/:id/edit' do
             @spell = Spell.find(params[:id])
-            erb :'/spells/edit'
+            if current_user.id == @spell.user_id
+                erb :'/spells/edit'
+            else
+                redirect '/spells'
+            end
         end
 
         #Update
@@ -59,8 +63,11 @@ class SpellsController < ApplicationController
 
         delete '/spells/:id' do
             spell = Spell.find(params[:id])
-            spell.destroy
-            redirect '/spells'
+            if spell.user == current_user
+                spell.destroy
+                redirect '/spells'
+            else
+                redirect '/spells'
+            end
         end
-
 end
