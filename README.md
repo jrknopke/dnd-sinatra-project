@@ -1,4 +1,13 @@
-Clone and run ``bundle install``.
-Run server with ``shotgun``.
+<h3> Description </h3>
+Sinatra CRUD application that allows users to create their own custom spells for D&D or any other fantasy RPG. 
 
-Users can signup, login, create their own custom spells and see custom spells created by all other users.
+<h3> Installation </h3>
+1. Fork and clone repo
+2. Use ``bundle install``
+
+<h3> Usage </h3>
+1. Run ``rake db:migrate``
+2. Run ``shotgun`` to start server
+
+<h3> License </h3>
+This project is available as open source under the terms of the MIT License
