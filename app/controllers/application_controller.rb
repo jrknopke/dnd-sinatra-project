@@ -13,6 +13,10 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  def find_spell
+    Spell.find(params[:id])
+  end
+
   def current_user
     User.find_by(id: session[:user_id])
   end
